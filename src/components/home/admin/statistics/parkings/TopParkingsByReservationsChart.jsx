@@ -31,7 +31,7 @@ function TopParkingsByReservations() {
   const [chart, setChart] = useState({});
 
   useEffect(() => {
-    fetch("par-kudserver-production.up.railway.app/reservations/top-parkings/5")
+    fetch("https://par-kudserver-production.up.railway.app/reservations/top-parkings/5")
       .then((response) => response.json())
       .then((data) => {
         setChart(data);

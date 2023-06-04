@@ -42,7 +42,7 @@ function ReservationsUsers() {
         endTimeDate.setMinutes(parseInt(endTime.split(":")[1]));
 
         const response = await fetch(
-          `par-kudserver-production.up.railway.app/reservations/updateStatus/${selectedReservation.reservationId}`,
+          `https://par-kudserver-production.up.railway.app/reservations/updateStatus/${selectedReservation.reservationId}`,
           {
             method: "PUT",
             headers: {
@@ -80,7 +80,7 @@ function ReservationsUsers() {
 
   const getCities = async () => {
     try {
-      const response = await fetch("par-kudserver-production.up.railway.app/parking/cities"); // Ruta en el backend para obtener la lista de ciudades
+      const response = await fetch("https://par-kudserver-production.up.railway.app/parking/cities"); // Ruta en el backend para obtener la lista de ciudades
       const data = await response.json();
       setCities(data);
     } catch (error) {
@@ -101,7 +101,7 @@ function ReservationsUsers() {
 
     try {
       const response = await fetch(
-        `par-kudserver-production.up.railway.app/parking/parkings?city=${city}`
+        `https://par-kudserver-production.up.railway.app/parking/parkings?city=${city}`
       ); // Ruta en el backend para obtener los parqueaderos por ciudad
       const data = await response.json();
       setParkings(data);
@@ -121,7 +121,7 @@ function ReservationsUsers() {
 
     try {
       const response = await fetch(
-        `par-kudserver-production.up.railway.app/parking/${parkingId}`
+        `https://par-kudserver-production.up.railway.app/parking/${parkingId}`
       ); // Ruta en el backend para obtener los datos completos del parqueadero
       const data = await response.json();
       setParkingData(data);
@@ -131,7 +131,7 @@ function ReservationsUsers() {
 
     try {
       const response = await fetch(
-        `par-kudserver-production.up.railway.app/user/users-by-parking/${parkingId}`
+        `https://par-kudserver-production.up.railway.app/user/users-by-parking/${parkingId}`
       );
       const data = await response.json();
       setUsers(data.users);
@@ -151,7 +151,7 @@ function ReservationsUsers() {
 
     try {
       const response = await fetch(
-        `par-kudserver-production.up.railway.app/reservations/user-pending-reservations/${userIdentityCard}`
+        `https://par-kudserver-production.up.railway.app/reservations/user-pending-reservations/${userIdentityCard}`
       );
       const data = await response.json();
       setReservations(data.reservations);

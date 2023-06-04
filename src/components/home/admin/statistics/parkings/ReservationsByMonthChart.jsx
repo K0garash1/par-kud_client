@@ -28,7 +28,7 @@ function ReservationsByMonthChart() {
   const [chart, setChart] = useState({});
 
   useEffect(() => {
-    fetch("par-kudserver-production.up.railway.app/reservations/reservations-by-month")
+    fetch("https://par-kudserver-production.up.railway.app/reservations/reservations-by-month")
       .then((response) => response.json())
       .then((data) => {
         setChart(data);

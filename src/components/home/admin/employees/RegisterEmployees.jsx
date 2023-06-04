@@ -35,7 +35,7 @@ function RegisterEmployees() {
     if (selectedParking && selectedCity) {
       try {
         const response = await fetch(
-          "par-kudserver-production.up.railway.app/employee/register",
+          "https://par-kudserver-production.up.railway.app/employee/register",
           {
             method: "POST",
             headers: {
@@ -78,7 +78,7 @@ function RegisterEmployees() {
 
   const getCities = async () => {
     try {
-      const response = await fetch("par-kudserver-production.up.railway.app/parking/cities"); // Ruta en el backend para obtener la lista de ciudades
+      const response = await fetch("https://par-kudserver-production.up.railway.app/parking/cities"); // Ruta en el backend para obtener la lista de ciudades
       const data = await response.json();
       setCities(data);
     } catch (error) {
@@ -93,7 +93,7 @@ function RegisterEmployees() {
 
     try {
       const response = await fetch(
-        `par-kudserver-production.up.railway.app/parking/parkings?city=${city}`
+        `https://par-kudserver-production.up.railway.app/parking/parkings?city=${city}`
       ); // Ruta en el backend para obtener los parqueaderos por ciudad
       const data = await response.json();
       setParkings(data);
@@ -108,7 +108,7 @@ function RegisterEmployees() {
 
     try {
       const response = await fetch(
-        `par-kudserver-production.up.railway.app/parking/${parkingId}`
+        `https://par-kudserver-production.up.railway.app/parking/${parkingId}`
       ); // Ruta en el backend para obtener los datos completos del parqueadero
       const data = await response.json();
       setParkingData(data);

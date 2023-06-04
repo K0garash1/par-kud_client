@@ -26,7 +26,7 @@ function LoginUser() {
     if (isValidCaptcha) {
       try {
         // Realizar solicitud al backend para registrar al usuario
-        const response = await fetch("par-kudserver-production.up.railway.app/user/login", {
+        const response = await fetch("https://par-kudserver-production.up.railway.app/user/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

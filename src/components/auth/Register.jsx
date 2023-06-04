@@ -32,7 +32,7 @@ function Register() {
     if (isValidCaptcha && !role && !user) {
       try {
         // Realizar solicitud al backend para registrar al usuario
-        const response = await fetch("par-kudserver-production.up.railway.app/user/register", {
+        const response = await fetch("https://par-kudserver-production.up.railway.app/user/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

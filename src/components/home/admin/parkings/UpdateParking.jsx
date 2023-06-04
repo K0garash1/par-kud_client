@@ -51,7 +51,7 @@ function UpdateParking() {
     try {
       // Realizar la solicitud POST al backend
       const response = await fetch(
-        `par-kudserver-production.up.railway.app/parking/update/${
+        `https://par-kudserver-production.up.railway.app/parking/update/${
           parkingData ? parkingData.parkingId : ""
         }`,
         {
@@ -80,7 +80,7 @@ function UpdateParking() {
 
     try {
       const response = await fetch(
-        `par-kudserver-production.up.railway.app/parking/delete/${selectedParking}`,
+        `https://par-kudserver-production.up.railway.app/parking/delete/${selectedParking}`,
         {
           method: "DELETE",
         }
@@ -100,7 +100,7 @@ function UpdateParking() {
 
   const getCities = async () => {
     try {
-      const response = await fetch("par-kudserver-production.up.railway.app/parking/cities"); // Ruta en el backend para obtener la lista de ciudades
+      const response = await fetch("https://par-kudserver-production.up.railway.app/parking/cities"); // Ruta en el backend para obtener la lista de ciudades
       const data = await response.json();
       setCities(data);
     } catch (error) {
@@ -115,7 +115,7 @@ function UpdateParking() {
 
     try {
       const response = await fetch(
-        `par-kudserver-production.up.railway.app/parking/parkings?city=${city}`
+        `https://par-kudserver-production.up.railway.app/parking/parkings?city=${city}`
       ); // Ruta en el backend para obtener los parqueaderos por ciudad
       const data = await response.json();
       setParkings(data);
@@ -133,7 +133,7 @@ function UpdateParking() {
         setParkingData(null);
       } else {
         const response = await fetch(
-          `par-kudserver-production.up.railway.app/parking/${parkingId}`
+          `https://par-kudserver-production.up.railway.app/parking/${parkingId}`
         );
         const data = await response.json();
         setParkingData(data);
@@ -256,7 +256,7 @@ function UpdateParking() {
                   {parkingData.imgUrl && (
                   <img
                     className="rounded shadow img-extended mb-4 w-100"
-                    src={`par-kudserver-production.up.railway.app/uploads/${parkingData.imgUrl}`}
+                    src={`https://par-kudserver-production.up.railway.app/uploads/${parkingData.imgUrl}`}
                     alt="Imagen del parqueadero"
                   />
                 )}

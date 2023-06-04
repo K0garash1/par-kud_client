@@ -30,7 +30,7 @@ function RegisterParkings() {
 
     try {
       // Realizar la solicitud POST al backend
-      const response = await fetch("par-kudserver-production.up.railway.app/parking/create", {
+      const response = await fetch("https://par-kudserver-production.up.railway.app/parking/create", {
         method: "POST",
         body: formData,
       });

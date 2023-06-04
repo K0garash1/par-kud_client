@@ -31,7 +31,7 @@ function TopUsersByReservationsChart() {
   const [chart, setChart] = useState({});
 
   useEffect(() => {
-    fetch("par-kudserver-production.up.railway.app/user/users-by-reservations/5")
+    fetch("https://par-kudserver-production.up.railway.app/user/users-by-reservations/5")
       .then((response) => response.json())
       .then((data) => {
         setChart(data);

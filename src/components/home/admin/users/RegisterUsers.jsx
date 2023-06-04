@@ -24,7 +24,7 @@ function RegisterUsers() {
     e.preventDefault();
 
     try {
-      const response = await fetch("par-kudserver-production.up.railway.app/user/create", {
+      const response = await fetch("https://par-kudserver-production.up.railway.app/user/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
