@@ -51,7 +51,7 @@ function UpdateParking() {
     try {
       // Realizar la solicitud POST al backend
       const response = await fetch(
-        `http://localhost:3000/parking/update/${
+        `par-kudserver-production.up.railway.app/parking/update/${
           parkingData ? parkingData.parkingId : ""
         }`,
         {
@@ -80,7 +80,7 @@ function UpdateParking() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/parking/delete/${selectedParking}`,
+        `par-kudserver-production.up.railway.app/parking/delete/${selectedParking}`,
         {
           method: "DELETE",
         }
@@ -100,7 +100,7 @@ function UpdateParking() {
 
   const getCities = async () => {
     try {
-      const response = await fetch("http://localhost:3000/get-cities"); // Ruta en el backend para obtener la lista de ciudades
+      const response = await fetch("par-kudserver-production.up.railway.app/parking/cities"); // Ruta en el backend para obtener la lista de ciudades
       const data = await response.json();
       setCities(data);
     } catch (error) {
@@ -115,7 +115,7 @@ function UpdateParking() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/parkings?city=${city}`
+        `par-kudserver-production.up.railway.app/parking/parkings?city=${city}`
       ); // Ruta en el backend para obtener los parqueaderos por ciudad
       const data = await response.json();
       setParkings(data);
@@ -133,7 +133,7 @@ function UpdateParking() {
         setParkingData(null);
       } else {
         const response = await fetch(
-          `http://localhost:3000/parking/${parkingId}`
+          `par-kudserver-production.up.railway.app/parking/${parkingId}`
         );
         const data = await response.json();
         setParkingData(data);
@@ -256,7 +256,7 @@ function UpdateParking() {
                   {parkingData.imgUrl && (
                   <img
                     className="rounded shadow img-extended mb-4 w-100"
-                    src={`http://localhost:3000/uploads/${parkingData.imgUrl}`}
+                    src={`par-kudserver-production.up.railway.app/uploads/${parkingData.imgUrl}`}
                     alt="Imagen del parqueadero"
                   />
                 )}

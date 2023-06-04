@@ -23,7 +23,7 @@ function UserChangePassword() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/user/updatePassword/${user.identityCard}`,
+        `par-kudserver-production.up.railway.app/user/updatePassword/${user.identityCard}`,
         {
           method: "POST",
           headers: {

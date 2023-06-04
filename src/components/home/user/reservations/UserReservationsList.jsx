@@ -23,7 +23,7 @@ function UserReservationsList() {
   const getReservations = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/user/reservations/${user.identityCard}`
+        `par-kudserver-production.up.railway.app/user/reservations/${user.identityCard}`
       );
       const data = await response.json();
       setReservations(data.reservations);
@@ -45,7 +45,7 @@ function UserReservationsList() {
   const cancelReservation = async (reservationId) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/reservations/updateStatus/${reservationId}`,
+        `par-kudserver-production.up.railway.app/reservations/updateStatus/${reservationId}`,
         {
           method: "PUT",
           headers: {

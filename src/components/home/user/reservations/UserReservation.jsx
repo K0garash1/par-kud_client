@@ -24,7 +24,7 @@ function UserReservation() {
     if (selectedParking && selectedCity) {
       try {
         const response = await fetch(
-          "http://localhost:3000/reservations/create",
+          "par-kudserver-production.up.railway.app/reservations/create",
           {
             method: "POST",
             headers: {
@@ -64,7 +64,7 @@ function UserReservation() {
 
   const getCities = async () => {
     try {
-      const response = await fetch("http://localhost:3000/get-cities"); // Ruta en el backend para obtener la lista de ciudades
+      const response = await fetch("par-kudserver-production.up.railway.app/parking/cities"); // Ruta en el backend para obtener la lista de ciudades
       const data = await response.json();
       setCities(data);
     } catch (error) {
@@ -80,7 +80,7 @@ function UserReservation() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/parkings?city=${city}`
+        `par-kudserver-production.up.railway.app/parking/parkings?city=${city}`
       ); // Ruta en el backend para obtener los parqueaderos por ciudad
       const data = await response.json();
       setParkings(data);
@@ -96,7 +96,7 @@ function UserReservation() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/parking/${parkingId}`
+        `par-kudserver-production.up.railway.app/parking/${parkingId}`
       ); // Ruta en el backend para obtener los datos completos del parqueadero
       const data = await response.json();
       setParkingData(data);
@@ -152,7 +152,7 @@ function UserReservation() {
                 {parkingData.imgUrl && (
                   <img
                     className="rounded shadow img-user-reservation mb-4"
-                    src={`http://localhost:3000/uploads/${parkingData.imgUrl}`}
+                    src={`par-kudserver-production.up.railway.app/uploads/${parkingData.imgUrl}`}
                     alt="Imagen del parqueadero"
                   />
                 )}
