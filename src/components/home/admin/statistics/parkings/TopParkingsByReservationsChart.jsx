@@ -44,11 +44,11 @@ function TopParkingsByReservations() {
   console.log("chart", chart);
 
   var data = {
-    labels: chart?.parking/parkings?.map((x) => x.name),
+    labels: chart?.parkings?.map((x) => x.name),
     datasets: [
       {
         label: "Parqueaderos",
-        data: chart?.parking/parkings?.map((x) => x.reservationCount),
+        data: chart?.parkings?.map((x) => x.reservationCount),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
